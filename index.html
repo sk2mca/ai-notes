@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Important AI Concepts</title>
+<style>
+:root{--bg:#fff;--surface:#f6f8fa;--border:#d0d7de;--text:#1f2328;--muted:#57606a;--type:#6f42c1;--req:#a82a2a;--good:#1a7f37}
+*{box-sizing:border-box}body{margin:0;padding:28px 20px 48px;background:var(--bg);color:var(--text);font-family:-apple-system,"Segoe UI",system-ui,sans-serif;font-size:15px;line-height:1.65}.wrap{max-width:860px;margin:0 auto}h1{font-size:30px;line-height:1.25;margin:0 0 6px;letter-spacing:-.4px}.meta{color:var(--muted);margin-bottom:28px}code,pre,.card-title,.term .t{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}p{margin:8px 0}code{font-size:13.5px;background:var(--surface);border:1px solid var(--border);padding:1px 5px;border-radius:4px}.card{border:1px solid var(--border);border-radius:8px;margin-bottom:28px;overflow:hidden}.card-head{display:flex;align-items:center;gap:16px;padding:18px;background:var(--surface);border-bottom:1px solid var(--border)}.badge{flex:none;min-width:74px;text-align:center;padding:6px 12px;border-radius:6px;font-weight:700;font-size:13px;letter-spacing:.5px;background:#dbe7fb;color:#1d4ed8}.badge.green{background:#d7f0df;color:#1a7f37}.badge.purple{background:#e6dcf7;color:#6f42c1}.badge.orange{background:#fde6cf;color:#b35900}.badge.red{background:#fbdcdc;color:#a82a2a}.badge.teal{background:#d3f0ee;color:#0f766e}.badge.gray{background:#e6e8eb;color:#3d444d}.card-title{font-weight:700;font-size:18px}.card-desc{color:var(--muted)}.card-body{padding:2px 18px 20px}h3{margin:24px 0 8px;font-size:13.5px;font-weight:600;letter-spacing:.7px;text-transform:uppercase;color:var(--muted)}ul,ol{margin:6px 0;padding-left:22px}li{margin:5px 0}li strong{font-weight:600}pre{margin:8px 0;padding:16px 18px;background:var(--surface);border:1px solid var(--border);border-radius:6px;font-size:13.5px;line-height:1.55;overflow-x:auto;white-space:pre}.ask{margin:8px 0;padding:12px 16px;border:1px solid var(--border);border-radius:6px;background:var(--bg)}.ask .who{font-size:12px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--muted)}.ask .q{font-size:16px;margin-top:2px}.note,.tip,.warn{margin:12px 0;padding:10px 14px;border-left:3px solid var(--border);background:var(--surface);border-radius:0 6px 6px 0}.note{color:var(--muted)}.tip{border-left-color:var(--good)}.warn{border-left-color:var(--req)}.label{font-weight:700;text-transform:uppercase;font-size:12px;letter-spacing:.6px;margin-right:6px}.tip .label{color:var(--good)}.warn .label{color:var(--req)}.term{border:1px solid var(--border);border-radius:6px;padding:10px 14px;margin:10px 0}.term .t{font-weight:700;color:var(--type)}.term .d{margin-top:2px}.term .p{color:var(--muted);font-size:14px}.footer{margin-top:32px;padding-top:12px;border-top:1px solid var(--border);color:var(--muted);font-size:12px;text-align:center}@media(max-width:600px){body{padding:20px 12px 32px}.card-head{align-items:flex-start;gap:10px;padding:14px}.badge{min-width:64px;padding:5px 8px}.card-title{font-size:16px}.card-body{padding:2px 14px 16px}h1{font-size:25px}pre{font-size:12px;padding:12px}}
+</style>
+</head>
+<body><div class="wrap">
+<div class="card-title">Important AI Concepts:</div>
+<div class="meta">Level: <code>beginner</code> &nbsp;·&nbsp; Common scenario: company HR assistant &nbsp;·&nbsp; Goal: see how each concept differs using the same simple, real-world setting</div>
+
+<div class="card"><div class="card-head"><span class="badge">1 · LLM</span><div><div class="card-title">Large Language Model</div><div class="card-desc">An AI model that understands and generates text and can perform reasoning-like tasks</div></div></div><div class="card-body"><h3>Example</h3><div class="ask"><div class="who">User</div><div class="q">“What is paid leave?”</div></div><h3>What happens</h3><ol><li><strong>Input</strong> — the user asks a question.</li><li><strong>Process</strong> — the LLM interprets the question and generates a response.</li><li><strong>Output</strong> — “Paid leave is time off from work for which an employee continues to receive pay.”</li></ol><div class="tip"><span class="label">Remember</span>LLM = Understand and generate.</div></div></div>
+
+<div class="card"><div class="card-head"><span class="badge gray">2 · TOOL</span><div><div class="card-title">Tool / Skill</div><div class="card-desc">A capability an AI application can invoke to perform a specific action or retrieve information</div></div></div><div class="card-body"><h3>Example</h3><div class="ask"><div class="who">User</div><div class="q">“How many paid leave days do I have left?”</div></div><h3>What happens</h3><ol><li><strong>Request</strong> — the LLM determines that it needs the employee's leave balance.</li><li><strong>Tool call</strong> — it requests the <code>get_leave_balance()</code> tool.</li><li><strong>Execution</strong> — the tool queries the HR system and returns <code>8 days</code>.</li><li><strong>Response</strong> — the LLM replies, “You have 8 paid leave days remaining.”</li></ol><div class="tip"><span class="label">Remember</span>Tool = Do a specific task.</div></div></div>
+
+<div class="card"><div class="card-head"><span class="badge green">3 · MCP</span><div><div class="card-title">Model Context Protocol</div><div class="card-desc">A standard protocol that lets AI applications connect to external tools, data, and services</div></div></div><div class="card-body"><h3>Example</h3><div class="ask"><div class="who">User</div><div class="q">“Check my remaining leave balance.”</div></div><h3>What happens</h3><ol><li><strong>Connection</strong> — the AI application connects to an HR MCP server.</li><li><strong>Discovery</strong> — the server exposes an available tool, such as <code>get_leave_balance</code>.</li><li><strong>Request</strong> — the AI application invokes that tool through MCP.</li><li><strong>Result</strong> — the HR service returns the leave balance, which the AI can use to answer.</li></ol><div class="warn"><span class="label">Important</span>MCP doesn't calculate the leave balance itself. The underlying tool or service performs the actual work.</div><div class="tip"><span class="label">Remember</span>MCP = A standard way to connect AI applications to tools and data.</div></div></div>
+
+<div class="card"><div class="card-head"><span class="badge teal">4 · RAG</span><div><div class="card-title">Retrieval-Augmented Generation</div><div class="card-desc">Retrieve relevant external information and give it to an LLM to produce a grounded answer</div></div></div><div class="card-body"><h3>Example</h3><div class="ask"><div class="who">User</div><div class="q">“According to our company policy, how many paid leave days can employees carry forward?”</div></div><h3>What happens</h3><ol><li><strong>Question</strong> — the user asks about company policy.</li><li><strong>Retrieval</strong> — the system searches company documents for the carry-forward policy.</li><li><strong>Context</strong> — it retrieves a relevant passage, such as “Employees may carry forward up to 5 unused days.”</li><li><strong>Generation</strong> — the LLM uses that passage to formulate an answer.</li><li><strong>Response</strong> — “According to the retrieved policy, employees may carry forward up to 5 unused days.”</li></ol><div class="warn"><span class="label">Important</span>RAG does not automatically guarantee a correct answer. The quality of retrieval and the source documents matters.</div><div class="note">RAG is an idea, not a product. You can build it with plain Python or with LangChain — see the next card.</div><div class="tip"><span class="label">Remember</span>RAG = Retrieve relevant information, then generate an answer.</div></div></div>
+
+<div class="card"><div class="card-head"><span class="badge purple">5 · CHAIN</span><div><div class="card-title">LangChain</div><div class="card-desc">A framework for building LLM applications by connecting models, prompts, tools, retrievers, and other components</div></div></div><div class="card-body"><h3>Example</h3><div class="ask"><div class="who">Developer goal</div><div class="q">“Build a chatbot that answers questions from our HR policy PDFs.”</div></div><p>This is a RAG application. The pipeline is the same either way; the only choice is <strong>who writes the glue code</strong> — you, or LangChain's ready-made components.</p><h3>The same pipeline, built two ways</h3>
+<div class="term"><div class="t">1 · Load the PDFs</div><div class="d"><strong>Without LangChain:</strong> write or integrate your own PDF-reading code.</div><div class="d"><strong>With LangChain:</strong> use a document loader.</div></div><div class="term"><div class="t">2 · Split into chunks</div><div class="d"><strong>Without LangChain:</strong> implement your own chunking logic.</div><div class="d"><strong>With LangChain:</strong> use a text splitter.</div></div><div class="term"><div class="t">3 · Generate embeddings</div><div class="d"><strong>Without LangChain:</strong> call an embedding model directly.</div><div class="d"><strong>With LangChain:</strong> use an embedding integration.</div></div><div class="term"><div class="t">4 · Store in a vector database</div><div class="d"><strong>Without LangChain:</strong> set up and call the vector database client yourself.</div><div class="d"><strong>With LangChain:</strong> use a vector store integration.</div></div><div class="term"><div class="t">5 · Retrieve relevant text</div><div class="d"><strong>Without LangChain:</strong> implement the vector search yourself.</div><div class="d"><strong>With LangChain:</strong> use a retriever.</div></div><div class="term"><div class="t">6 · Send context + question to the LLM</div><div class="d"><strong>Without LangChain:</strong> write the prompt and the model call.</div><div class="d"><strong>With LangChain:</strong> use a retrieval chain, or compose the components yourself.</div></div>
+<h3>Option 1 — without LangChain (manual Python)</h3><pre><code># Steps 1-2: load and split
+from pypdf import PdfReader
+text = "".join(p.extract_text() for p in PdfReader("hr_policy.pdf").pages)
+chunks = [text[i:i + 800] for i in range(0, len(text), 700)]
+
+# Steps 3-4: embed and store (a plain array here; use a vector DB in production)
+import numpy as np
+from openai import OpenAI
+client = OpenAI()
+
+def embed(texts):
+    r = client.embeddings.create(model="text-embedding-3-small", input=texts)
+    return np.array([d.embedding for d in r.data])
+
+vectors = embed(chunks)
+
+# Step 5: retrieve
+def retrieve(question, k=3):
+    scores = vectors @ embed([question])[0]
+    return [chunks[i] for i in scores.argsort()[::-1][:k]]
+
+# Step 6: ask the LLM
+question = "How many leave days can I carry forward?"
+context = "\n\n".join(retrieve(question))
+reply = client.chat.completions.create(
+    model="gpt-4o-mini",
+    messages=[{"role": "user", "content": f"Answer using only this context:\n{context}\n\nQuestion: {question}"}],
+)
+print(reply.choices[0].message.content)</code></pre>
+<h3>Option 2 — with LangChain</h3><pre><code>from langchain_community.document_loaders import PyPDFLoader
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_openai import OpenAIEmbeddings, ChatOpenAI
+from langchain_community.vectorstores import FAISS
+
+docs = PyPDFLoader("hr_policy.pdf").load()
+chunks = RecursiveCharacterTextSplitter(chunk_size=800, chunk_overlap=100).split_documents(docs)
+store = FAISS.from_documents(chunks, OpenAIEmbeddings())
+retriever = store.as_retriever(search_kwargs={"k": 3})
+
+question = "How many leave days can I carry forward?"
+context = "\n\n".join(d.page_content for d in retriever.invoke(question))
+llm = ChatOpenAI(model="gpt-4o-mini")
+print(llm.invoke(f"Answer using only this context:\n{context}\n\nQuestion: {question}").content)</code></pre>
+<div class="note">Both sketches are illustrative; library versions and import paths change over time. Notice that the steps are identical — LangChain only replaces the glue code you would otherwise write.</div><h3>Which should you choose?</h3><ul><li><strong>Without LangChain</strong> — more control over every step, fewer framework dependencies. Best when you want to understand each step or need direct control.</li><li><strong>With LangChain</strong> — often faster to assemble a standard RAG pipeline, with less integration code. The cost is extra framework abstractions to learn and maintain.</li></ul><div class="warn"><span class="label">Important</span>LangChain is a framework, not an LLM model itself. It makes integration easier; it doesn't make RAG mandatory or guarantee better answers. You still choose the embedding model, vector store, retrieval strategy, and LLM.</div><div class="tip"><span class="label">Remember</span>LangChain = Build an LLM application by connecting components.</div></div></div>
+
+<div class="card"><div class="card-head"><span class="badge orange">6 · GRAPH</span><div><div class="card-title">LangGraph</div><div class="card-desc">A framework for building stateful workflows with steps, conditional branches, and repeated execution</div></div></div><div class="card-body"><h3>Example</h3><div class="ask"><div class="who">User</div><div class="q">“I need leave approval. Please check my balance and submit my request if I am eligible.”</div></div><h3>What happens</h3><ol><li><strong>Start</strong> — the workflow receives the leave request.</li><li><strong>Check</strong> — a node calls the HR system to check the leave balance.</li><li><strong>Branch</strong> — a conditional edge routes the workflow based on eligibility.</li><li><strong>Act</strong> — if eligible, the workflow can request confirmation and submit the application.</li><li><strong>Finish</strong> — the workflow returns the submission status or explains why it could not proceed.</li></ol><h3>Workflow graph</h3><pre>START ─▶ [check_balance] ─▶ eligible?
+                              │
+              yes ────────────┼──────────── no
+               ▼                              ▼
+     [ask_confirmation]               [explain_why_not]
+               ▼                              │
+       [submit_request]                       │
+               ▼                              ▼
+              END ◀───────────────────────────┘
+
+State carried along: employee, balance, eligible, confirmation, status</pre><div class="warn"><span class="label">Important</span>LangGraph doesn't automatically make a workflow an agent. It can run either a fixed workflow or an agent-style loop.</div><div class="tip"><span class="label">Remember</span>LangGraph = Manage the workflow, state, and decisions between steps.</div></div></div>
+
+<div class="card"><div class="card-head"><span class="badge red">7 · AGENT</span><div><div class="card-title">Agent</div><div class="card-desc">An AI system that uses an LLM to choose actions, invoke tools, observe results, and repeat as needed</div></div></div><div class="card-body"><h3>Example</h3><div class="ask"><div class="who">User</div><div class="q">“Find out whether I can take leave next Monday and submit my request if I can.”</div></div><h3>What happens</h3><ol><li><strong>Think</strong> — the agent identifies that it needs the leave policy, leave balance, and possibly the leave calendar.</li><li><strong>Act</strong> — it calls the relevant tools to retrieve that information.</li><li><strong>Observe</strong> — it checks the returned results.</li><li><strong>Decide</strong> — it determines whether another check is needed or whether the task can proceed.</li><li><strong>Act again</strong> — if eligible, it may ask the user for confirmation before submitting the request.</li><li><strong>Finish</strong> — it reports whether the request was submitted or explains what prevented submission.</li></ol><div class="warn"><span class="label">Important</span>The agent should not assume a request is approved just because it is eligible to submit. Actual approval may require a manager or another system.</div><div class="tip"><span class="label">Remember</span>Agent = Decide what to do, use tools, check results, and repeat until done or stopped.</div></div></div>
+
+<div class="card"><div class="card-head"><span class="badge red">FLOW</span><div><div class="card-title">Fixed Flow vs. Dynamic Flow</div><div class="card-desc">Who decides the next step: the developer, or the agent?</div></div></div><div class="card-body"><h3>A. Fixed flow — no agent required</h3><p>You already know which data sources must be checked for each request. The developer defines the steps in advance and the application simply executes them.</p><div class="ask"><div class="who">User</div><div class="q">“Verify order 12345 against the database and refund policy, then email the result.”</div></div><pre>User question
+      │
+      ▼
+Predefined workflow
+      │
+      ├──▶ Database ──▶ Fetch order
+      │
+      ├──▶ RAG ───────▶ Retrieve refund policy
+      │
+      ▼
+Verify ──▶ Email result</pre><p>The agent is not required: the application checks both sources because the developer defined those steps in advance.</p><h3>B. Dynamic flow — an agent can be useful</h3><p>You don't know in advance which data sources will be needed. The next action depends on what the system discovers along the way.</p><div class="ask"><div class="who">User</div><div class="q">“Investigate order 12345 and determine why it failed.”</div></div><pre>User question
+      │
+      ▼
+Agent decides: "Which source should I check first?"
+      │
+      ▼
+Tool: query order database ──▶ finds a payment mismatch
+      │
+      ▼
+Agent decides again: "A payment lookup is needed to investigate further."
+      │
+      ├──▶ Payment API
+      │
+      ├──▶ RAG (only if policy is relevant)
+      │
+      ▼
+Agent evaluates findings ──▶ explains likely cause</pre><p>The agent chooses the next useful action based on the results. It may call additional tools, stop when it has enough evidence, or ask the user for missing information.</p><div class="tip"><span class="label">Remember</span>Fixed flow = developer chooses the steps. Dynamic agent flow = the model chooses actions as results come back.</div></div></div>
+
+<div class="card"><div class="card-head"><span class="badge gray">SUMMARY</span><div><div class="card-title">Quick Comparison</div><div class="card-desc">One-line memory aid for all seven concepts</div></div></div><div class="card-body"><ul><li><strong>LLM:</strong> Understands and generates language.</li><li><strong>Tool:</strong> Performs a specific action or retrieves data.</li><li><strong>MCP:</strong> Standardizes how AI applications connect to tools and data.</li><li><strong>RAG:</strong> Retrieves relevant information to ground an answer.</li><li><strong>LangChain:</strong> Helps connect the components of an LLM application.</li><li><strong>LangGraph:</strong> Orchestrates stateful workflows and branching.</li><li><strong>Agent:</strong> Chooses and executes actions dynamically, using feedback from tools.</li></ul><div class="note">These concepts can work together. For example, an agent may use an LLM, call tools exposed through MCP, retrieve policy documents using RAG, and run its workflow with LangGraph. LangChain may help integrate some of those components.</div></div></div>
+<div class="footer">Study notes · Beginner-friendly AI concepts · HR assistant examples</div>
+</div></body></html>
